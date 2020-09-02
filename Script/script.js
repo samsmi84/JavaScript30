@@ -15,8 +15,8 @@ function debounce (func, wait = 20, immediate = true) {
 };
 
 // changed slidr to slider
-
-const sliderImages = document.querySelectorAll('#slide-in');
+// replaced hashtag to dot
+const sliderImages = document.querySelectorAll('.slide-in');
 
 function checkSlide() {
     sliderImages.forEach(sliderImage => {
@@ -26,7 +26,8 @@ function checkSlide() {
         // Changed the '-' to '='
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
         // Changed the '-' to '='
-        const isHalfShown = slideInAt < sliderImage.offsetTop;
+        // "<" to ">"
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
         const isNotScrolledPast = window.scrollY < imageBottom;
         if (isHalfShown && isNotScrolledPast) {
             sliderImage.classList.add('active');
@@ -36,4 +37,5 @@ function checkSlide() {
     });
 }
 
-window.addEventListener('scroll', debounce[checkSlide]);
+// Changed the square brackets to brackets
+window.addEventListener('scroll', debounce(checkSlide));
